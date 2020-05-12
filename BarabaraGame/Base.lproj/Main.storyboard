@@ -134,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="824.63768115942037" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Ranking View Controller-->
         <scene sceneID="44v-bU-crn">
             <objects>
-                <viewController id="4XE-E8-Lyj" sceneMemberID="viewController">
+                <viewController id="4XE-E8-Lyj" customClass="RankingViewController" customModule="BarabaraGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3b4-4a-d66">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,6 +148,9 @@
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Topへ"/>
+                                <connections>
+                                    <action selector="toTop" destination="4XE-E8-Lyj" eventType="touchUpInside" id="AGw-WE-hSu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ランキング" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygD-Lm-RCn">
                                 <rect key="frame" x="38" y="124" width="331" height="48"/>
@@ -181,6 +184,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="IJe-w6-yJ6"/>
                     </view>
+                    <connections>
+                        <outlet property="rankingLabel1" destination="Frq-eL-vD6" id="VBS-5D-dGC"/>
+                        <outlet property="rankingLabel2" destination="vYa-B1-hpN" id="6m4-Vb-UjX"/>
+                        <outlet property="rankingLabel3" destination="5Uy-2G-KxQ" id="dQe-o0-9Bx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1o-MY-Y7L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

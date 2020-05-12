@@ -49,10 +49,28 @@ class GameViewController: UIViewController {
         
         for i in 0..<3 {
                  score = score - abs(Int(width/2 - positionX[i])) * 2//スコアの計算
-              }
+        }
                   
-              resultLabel.text = "Score：" + String(score)
-              resultLabel.isHidden = false
+        resultLabel.text = "Score：" + String(score)
+        resultLabel.isHidden = false
+        
+        let highScore1: Int = defaults.integer(forKey: "score1")
+        let highScore2: Int = defaults.integer(forKey: "score2")
+        let highScore3: Int = defaults.integer(forKey: "score3")
+        
+        if score > highScore1{
+            defaults.set(score, forKey: "score1")
+            defaults.set(highScore1, forKey: "score2")
+            defaults.set(highScore2, forKey: "score3")
+        }else if score > highScore2{
+            defaults.set(score, forKey: "score2")
+            //score1はそのままだから書き換えなくて良い
+            defaults.set(highScore2, forKey: "score3")
+        }else if score > highScore3{
+            defaults.set(score, forKey: "score3")
+             //score1、2はそのままだから書き換えなくて良い
+        }
+        defaults.synchronize()
     }
     
     @IBAction func retry(){
